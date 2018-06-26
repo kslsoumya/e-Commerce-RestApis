@@ -1,0 +1,573 @@
+[
+  {
+    "type": "post",
+    "url": "/api/v1/products/create",
+    "title": "Create a Product",
+    "version": "0.0.1",
+    "name": "Create_a_Product",
+    "group": "Create",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of the product passed as a body parameter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Category of the product passed as a body parameter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "availability",
+            "description": "<p>Availability of the product passed as a body parameter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description of the product passed as a body parameter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "warranty",
+            "description": "<p>Warranty of the product passed as a body parameter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price of the product passed as a body parameter.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"Product Created Successfully!!\",\n   \"status\": 200,    \n   \"data\" : {\n                     \"productName\": \"String\",\n                     \"productCategory\": \"String\",\n                      \"isAvailable\": \"Boolean,\n                      \"description\": \"String\",\n                      \"colorsAvailable\": object(type=array),\n                      \"warrantyInYears\": number,\n                       \"price\": number,\n                      \"productId\": \"String\",\n                      \"dateOfEntry\": date\n                   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Create"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/register_user",
+    "title": "Register a user",
+    "version": "0.0.1",
+    "name": "Register_a_user",
+    "group": "Create",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>Username of the user  for registration passed as a Body parameter or header param.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user for registration passed as a Body parameter or header param.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"User Registered successfully!!\",\n   \"status\": 200,    \n   \"data\" : { \n                     \"cartItems\": object(type=array),\n                     \"cartCount\": number,\n                      \"userName\": \"String\",\n                      \"password\": \"String\"      \n              }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Create"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/products/remove/:id",
+    "title": "Delete a Product",
+    "version": "0.0.1",
+    "name": "Delete_Product",
+    "group": "Delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id of the product passed as a URL parameter.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"Product Deleted Successfully!!\",\n   \"status\": 200,    \n   \"data\" : {  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Delete"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/delete_user",
+    "title": "Delete User",
+    "version": "0.0.1",
+    "name": "Delete_a_User",
+    "group": "Delete",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>Username of the user  for authentication passed as a Body parameter or header param.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user for authentication passed as a Body parameter or header param.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"User Deleted Successfully!!\",\n   \"status\": 200,    \n   \"data\" : {  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Delete"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/remove/from_Cart/:id",
+    "title": "Remove a Product from cart",
+    "version": "0.0.1",
+    "name": "Remove_a_Product_From_Cart",
+    "group": "Edit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>Username of the user  for authentication passed as a Body parameter or header param.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user for authentication passed as a Body parameter or header param.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id of the product passed as a Body parameter or header param.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"Deleted from cart successfully!!\",\n   \"status\": 200,    \n   \"data\" : {\n                     \"cartItems\": object(type=array),\n                     \"cartCount\": number,\n                      \"userName\": \"String\",\n                      \"password\": \"String\"\n                   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Edit"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/addTo_Cart/:id/:qty",
+    "title": "Add Product to cart",
+    "version": "0.0.1",
+    "name": "Update_Cart",
+    "group": "Edit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>Username of the user  for authentication passed as a Body parameter or header param.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user for authentication passed as a Body parameter or header param.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id of the product passed as a URL parameter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "qty",
+            "description": "<p>Quantity of the product passed as a URL parameter.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"Added to cart successfully!!\",\n   \"status\": 200,    \n   \"data\" : { \n                     \"cartItems\" :[\n                               \"name\":\"String\",\n                                \"id\" :\"String\",\n                               ] }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Edit"
+  },
+  {
+    "type": "put",
+    "url": "/api/v1/products/update/:id",
+    "title": "Update a product",
+    "version": "0.0.1",
+    "name": "Update_Product",
+    "group": "Edit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id of the product passed as a URL parameter.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "option",
+            "description": "<p>value to be changed passed as a body parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"Product Updated Successfully!!\",\n   \"status\": 200,    \n   \"data\" : {  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Edit"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/user_details",
+    "title": "User Details",
+    "version": "0.0.1",
+    "name": "Get_User_Details",
+    "group": "Read",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>Username of the user  for authentication passed as a  header param.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user for authentication passed as a  header param.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"User Details Found !!\",\n   \"status\": 200,    \n   \"data\" : { \n                      \"cartItems\": object(type=array),\n                      \"cartCount\": number,\n                      \"userName\": \"String\",\n                      \"password\": \"String\"    \n             }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Read"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/products/list_all",
+    "title": "Get all Products",
+    "version": "0.0.1",
+    "name": "Get_all_Products",
+    "group": "Read",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"Products Found Successfully\",\n   \"status\": 200,    \n   \"data\" : [\n                 {\n                     \"productName\": \"String\",\n                     \"productCategory\": \"String\",\n                      \"isAvailable\": boolean,\n                      \"description\": \"String\",\n                      \"colorsAvailable\": object(type=array),\n                      \"warrantyInYears\": \"Number,\n                       \"price\": number,\n                      \"productId\": \"String\",\n                      \"dateOfEntry\": date\n                   }\n               ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Read"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/products/detail/:id",
+    "title": "Get Product Details",
+    "version": "0.0.1",
+    "name": "Get_details_of_Product",
+    "group": "Read",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "authToken",
+            "description": "<p>The token for authentication.(Send authToken as a query Param or header Param or Body param)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The id of the product passed as a URL parameter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"error\": \"No\",\n  \"message\": \"Product Found Successfully\",\n   \"status\": 200,    \n   \"data\" : [\n                 {\n                     \"productName\": \"String\",\n                     \"productCategory\": \"String\",\n                      \"isAvailable\": boolean,\n                      \"description\": \"String\",\n                      \"colorsAvailable\": object(type=array),\n                      \"warrantyInYears\": number,\n                       \"price\": number,\n                      \"productId\": \"String\",\n                      \"dateOfEntry\": date\n                   }\n               ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\n{\n  \"error\": \"Yes\",\n   \"message\": \"Error Occured\",\n    \"status\":500,\n     \"data\":null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/storeRoutes.js",
+    "groupTitle": "Read"
+  }
+]
